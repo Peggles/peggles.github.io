@@ -2,7 +2,7 @@
 
 ## PowerShell profile
 ```powershell
-# Source all files in a profile functions folder.
+# Source all files in a custom profile functions folder. One function per file (with same filename as the function).
 Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'ProfileFunctions') -Filter '*.ps1' | ForEach-Object { . $_.FullName }
 
 # Default parameter values.
