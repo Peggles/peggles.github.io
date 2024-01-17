@@ -36,10 +36,12 @@ function Prompt {
     $pathList = $PWD.Path.Split('\')
     for ($i = 0; $i -lt ($pathList | Measure-Object).Count; $i++) {
         if ($i -lt ($pathList | Measure-Object).Count - 1) {
+            # All path items except last.
             Write-Host $pathList[$i] -NoNewline -ForegroundColor DarkBlue
             Write-Host '\' -NoNewline -ForegroundColor DarkGray
         }
         else {
+            # Last path item.
             Write-Host $pathList[$i] -NoNewline -ForegroundColor Blue
         }
     }
