@@ -19,11 +19,11 @@ function Prompt {
     $principal = [Security.Principal.WindowsPrincipal] $identity
     $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
 
-    if (Test-Path variable:/PSDebugContext) {
+    if (Test-Path -Path variable:/PSDebugContext) {
         $Host.UI.RawUI.WindowTitle = "[DEBUG] $($Host.UI.RawUI.WindowTitle)"
         Write-Host "[DEBUG] " -NoNewline -ForegroundColor Magenta
     }
-    elseif($principal.IsInRole($adminRole)) {
+    elseif ($principal.IsInRole($adminRole)) {
         $Host.UI.RawUI.WindowTitle = "[ADMIN] $($Host.UI.RawUI.WindowTitle)"
         Write-Host "[ADMIN] " -NoNewline -ForegroundColor Red
     }
