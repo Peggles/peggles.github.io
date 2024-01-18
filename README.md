@@ -47,7 +47,7 @@ function Prompt {
     return ' '
 }
 
-# Source all files in a custom profile functions folder. One function per file (with same filename as the function).
+# Source all files in a custom profile functions folder. One function per ps1 file (with same filename as the function).
 Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'ProfileFunctions') -Filter '*.ps1' | ForEach-Object { . $_.FullName }
 ```
 
