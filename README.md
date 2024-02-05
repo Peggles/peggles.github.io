@@ -26,7 +26,7 @@ function Prompt {
     }
 
     if ($PWD.Provider.Name -ne 'FileSystem') {
-        Write-Host "[$($pwd.Provider.Name)]" -NoNewline -ForegroundColor DarkGray
+        Write-Host "[$($PWD.Provider.Name)] " -NoNewline -ForegroundColor DarkGray
     }
 
     # Print parts of the path in different colors.
